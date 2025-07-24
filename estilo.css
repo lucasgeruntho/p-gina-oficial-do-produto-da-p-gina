@@ -1,27 +1,33 @@
-* {
+/* fundo da página */
+* { 
 width: 100%;
   margin: 0;
   padding: 0;
   background-color: black;
- 
-}
-body {
-        width: 100%;
-     
-        margin: 0;
-        padding: 0;
+ box-sizing: border-box; 
 }
 
-@media (max-width: 978px) {
-    body {
-        width: 100%;
+body {
+    width: 100%;
     margin: 0;
     padding: 0;
-        
+}
+
+/* expansivo para celular  */
+@media (max-width: 978px) {
+    body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
     }
 }
 
-.text-primary {
+/* fechamento */
+
+
+/* background topo */
+
+.text-primary-topo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,11 +38,121 @@ body {
     
 }
 
-h1 {
+h2 {
     color: white;
+    background-color: blue;
     margin: 0;
-    padding: 0;
+    font-size: 2rem;
+    padding-top: 10px;
+    padding: 0 5px 5px;
+    
   
 }
 
+/* fechamento */
 
+.centered-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.banner-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  background: black;
+  border: 1px solid rgba(33, 228, 138, 0.2);
+  padding: 8px 16px;
+  color: #21E48A;
+  gap: 10px;
+  border-radius: 999px;
+  box-shadow: 0 0 10px rgba(33, 228, 138, 0.15);
+  pointer-events: auto;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.banner-icon {
+  flex-shrink: 0;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-text {
+   
+  white-space: nowrap;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .banner-text {
+    font-size: 12px;
+  }
+}
+
+
+
+
+/* Container pai para centralizar */
+.topo-wrapper {
+  display: flex;
+  justify-content: center;
+
+}
+
+/* Container com bordas arredondadas inferiores e cortes externos superiores */
+.topo-container {
+  position: relative;
+  background: white; /* Fundo preto */
+  border-radius: 0 0 20px 20px; /* Bordas inferiores arredondadas */
+  width: 100%;
+  max-width: 600px;
+  padding: 20px 4px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Cortes externos superiores */
+.topo-container::before,
+.topo-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  background: white; /* mesma cor do fundo da sua página */
+  z-index: 2;
+}
+
+/* Corte no canto superior esquerdo */
+.topo-container::before {
+  left: 0;
+  border-bottom-right-radius: 100%;
+}
+
+/* Corte no canto superior direito */
+.topo-container::after {
+  right: 0;
+  border-bottom-left-radius: 100%;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .topo-container {
+    max-width: 90%;
+    padding: 16px;
+  }
+
+  .topo-container::before,
+  .topo-container::after {
+    width: 30px;
+    height: 30px;
+  }
+}
