@@ -13,6 +13,21 @@ body {
     padding: 0;
 }
 
+.rolamento {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  margin: 0;
+}
+.rolamento h1 {
+  color: aliceblue;
+  text-align: center;
+  margin-top: 1500px;
+}
+
+
 
 
 /* expansivo para celular  */
@@ -43,15 +58,16 @@ body {
   align-items: center;
   background: #06050a;
   height: 60px;
-  margin-left: 15px;
-  padding: 0;
+ 
+
   border-left: 8px solid #2400ff;
   border-right: 8px solid #2400ff;
   box-sizing: border-box;
   margin-top: 0;
-  width: 98%;
+
   overflow: hidden; 
-  
+  padding-left: 20px;
+  padding-right: 20px;
   z-index: 3; 
   border-radius: 0 0 1.5rem 1.5rem;
   background: #06050a;
@@ -190,15 +206,19 @@ body {
 
 @media (max-width: 768px) {
   .mobile-top-container {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  align-items: center;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
   
-    font-family: sans-serif;
-    position: relative;
-    z-index: 9999;
   }
 
   .mobile-top-bar {
     background: #0a0a18;
-    border-radius: 18px;
+    border-radius: 0 0 10px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -224,11 +244,22 @@ body {
     font-size: 14px;
   }
 
+
+
+
+
+
+
+
   .mobile-icons {
     display: flex;
-    align-items: center;
+    right: 2px;
+    padding-left: 30px;
+   
     background-color: black;
-    gap: 2px; 
+    max-width: 100px;
+    min-width: 100px;
+    align-items: center;
   }
 
   .circle-btn {
@@ -241,36 +272,34 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
     padding: 4px;
-    
     cursor: pointer;
+    padding-right: 3px;
   }
 
   .circle-btn .dot {
-    width: 4px;
-    height: 4px;
- 
+    width: 6px;
+    height: 6px;
     background: white;
-    border-radius: 50%;
+    border-radius: 100%;
 
   }
 
   .whatsapp-btn-2 {
-     background-color: transparent;
-    border-radius: 0 10px 10px 0;
-    padding: 4px 6px;
- 
+    background-color:blue;
+    border-radius: 10px 0 5px; 
+    margin: 0 0 0 10px;
+    padding: 11px 10px 11px 10px;
     display: flex;
     align-items: center;
+    width: 50%;
     justify-content: center;
   }
 
   .whatsapp-btn-2 img {
-    width: 18px;
-    height: 18px;
-    margin-left: 80px;
-    background-color: transparent;
+   width: 18px;
+  height: 18px;
   }
 
   .mobile-menu {
