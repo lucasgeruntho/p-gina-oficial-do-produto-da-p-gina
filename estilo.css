@@ -24,13 +24,17 @@ body {
 
 
 
+
+
+
+
 .custom-header {
   position: relative;
   display: flex;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   background: #06050a;
-  border-radius: 0 0 1.5rem 1.5rem;
+  
   height: 60px;
   margin-left: 15px;
   padding: 0;
@@ -40,9 +44,14 @@ body {
   margin-top: 0;
   width: 98%;
   overflow: hidden; 
+  
+  z-index: 3; /* acima das curvas */
+  border-radius: 0 0 1.5rem 1.5rem;
+  background: #06050a;
+  /* resto do seu estilo permanece */
 }
 
-/* Lados (logo e botão) */
+
 .header-side {
   background-color: black;
 
@@ -60,7 +69,7 @@ body {
   justify-content: flex-end;
 }
 
-/* Logo */
+
 .logo {
   height: 28px;
   margin-right: 0.5rem;
@@ -69,13 +78,11 @@ body {
 
 .brand-name {
   background-color: black;
-
   color: white;
   font-weight: bold;
   font-size: 1rem;
 }
 
-/* Navegação Centralizada */
 .nav-center {
   background-color: black;
   display: flex;
@@ -99,7 +106,7 @@ body {
 
 
 
-/* Botão padrão compacto */
+
 .whatsapp-btn {
   display: flex;
   align-items: center;
@@ -118,13 +125,13 @@ body {
   text-overflow: ellipsis;
 }
 
-/* Ícone do WhatsApp */
+
 .whatsapp-btn img {
   width: 18px;
   height: 18px;
 }
 
-/* Hover */
+
 .whatsapp-btn:hover {
   background-color: blue;
 
@@ -135,9 +142,9 @@ body {
 
 .social-popup {
   position: absolute;
-  top: 70px; /* ajustável via JS */
+  top: 70px; 
   left: 0;
-  background: linear-gradient(135deg, #1010a5cc, #b300b3cc); /* azul + roxo com transparência */
+  background: linear-gradient(135deg, #1010a5cc, #b300b3cc); 
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 12px;
   padding: 12px;
@@ -157,6 +164,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  background-color: transparent;
   font-size: 1rem;
   border-radius: 8px;
   transition: background 0.2s ease;
@@ -168,5 +176,7 @@ body {
 
 .social-popup img {
   width: 20px;
+  background-color: transparent;
   height: 20px;
 }
+

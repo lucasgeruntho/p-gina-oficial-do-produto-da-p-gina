@@ -7,8 +7,8 @@
       const rect = toggle.getBoundingClientRect();
 
       // Posiciona abaixo do botão
-      popup.style.top = `${rect.bottom + window.scrollY + 5}px`;
-      popup.style.left = `${rect.left + window.scrollX}px`;
+      popup.style.top = `${rect.bottom + window.scrollY + 25}px`;
+      popup.style.left = `${rect.left + window.scrollX + -25}px`;
 
       popup.style.display = popup.style.display === "flex" ? "none" : "flex";
     });
@@ -19,3 +19,6 @@
       }
     });
   });
+
+
+
