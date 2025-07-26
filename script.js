@@ -21,4 +21,17 @@
   });
 
 
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuBtn = document.getElementById("mobile-menu-btn");
+    const menu = document.getElementById("mobile-menu");
+    const submenu = document.querySelector(".submenu");
+
+    menuBtn.addEventListener("click", () => {
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    });
+
+    submenu.addEventListener("click", () => {
+      submenu.classList.toggle("active");
+    });
+  });
 

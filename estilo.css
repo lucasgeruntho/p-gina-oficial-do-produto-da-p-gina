@@ -13,18 +13,26 @@ body {
     padding: 0;
 }
 
+
+
 /* expansivo para celular  */
-@media (max-width: 978px) {
+@media (max-width: 768px) {
     body {
     width: 100%;
     margin: 0;
     padding: 0;
-    }
+    .custom-header {
+    display: none;
+  }
+  .mobile-top-container{
+    display: block;
+  }
+  } 
 }
-
-
-
-
+/* expansivo para desktop  */
+.mobile-top-container {
+  display: none;
+}
 
 
 
@@ -34,7 +42,6 @@ body {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   background: #06050a;
-  
   height: 60px;
   margin-left: 15px;
   padding: 0;
@@ -45,10 +52,10 @@ body {
   width: 98%;
   overflow: hidden; 
   
-  z-index: 3; /* acima das curvas */
+  z-index: 3; 
   border-radius: 0 0 1.5rem 1.5rem;
   background: #06050a;
-  /* resto do seu estilo permanece */
+  
 }
 
 
@@ -180,3 +187,128 @@ body {
   height: 20px;
 }
 
+
+@media (max-width: 768px) {
+  .mobile-top-container {
+  
+    font-family: sans-serif;
+    position: relative;
+    z-index: 9999;
+  }
+
+  .mobile-top-bar {
+    background: #0a0a18;
+    border-radius: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+  }
+
+  .mobile-logo {
+    display: flex;
+    background-color: #06050a;
+    align-items: center;
+    gap: 6px;
+    padding-left: 6px;
+  }
+
+  .mobile-logo img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .mobile-logo span {
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .mobile-icons {
+    display: flex;
+    align-items: center;
+    background-color: black;
+    gap: 2px; 
+  }
+
+  .circle-btn {
+    background: #0f1131;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 4px;
+    
+    cursor: pointer;
+  }
+
+  .circle-btn .dot {
+    width: 4px;
+    height: 4px;
+ 
+    background: white;
+    border-radius: 50%;
+
+  }
+
+  .whatsapp-btn-2 {
+     background-color: transparent;
+    border-radius: 0 10px 10px 0;
+    padding: 4px 6px;
+ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .whatsapp-btn-2 img {
+    width: 18px;
+    height: 18px;
+    margin-left: 80px;
+    background-color: transparent;
+  }
+
+  .mobile-menu {
+    background: #18182c;
+    margin-top: 5px;
+    border-radius: 14px;
+    display: none;
+    flex-direction: column;
+    padding: 10px 15px;
+    color: white;
+    gap: 10px;
+  }
+
+  .mobile-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+  }
+
+  .submenu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .submenu span {
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .submenu-links {
+    display: none;
+    flex-direction: column;
+    padding-left: 10px;
+    gap: 5px;
+  }
+
+  .submenu.active .submenu-links {
+    display: flex;
+  }
+}
