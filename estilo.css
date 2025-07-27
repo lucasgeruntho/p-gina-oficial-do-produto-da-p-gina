@@ -56,37 +56,38 @@ body {
 }
 
 
-
 .custom-header {
   position: relative;
   display: flex;
-  grid-template-columns: 1fr auto 1fr;
+  justify-content: space-between;
+  left: 40px;
+  padding: 0 6px 0 15px;
   align-items: center;
-  background: #06050a;
   height: 60px;
   border-left: 8px solid #2400ff;
   border-right: 8px solid #2400ff;
   box-sizing: border-box;
-  margin-top: 0;
+  border-radius: 0 0 20px 20px;
   overflow: hidden; 
-  padding-left: 20px;
-  padding-right: 20px;
-  z-index: 3; 
-  border-radius: 0 0 1.5rem 1.5rem;
+  z-index: 10;
+  width: calc(100% - 80px);
   background: #06050a;
   
 }
 
 
 .header-side {
-  background-color: black;
+  background-color: transparent;
   display: flex;
+  padding-right: 10px;
   align-items: center;
   justify-content: space-between;
-  padding: 0 2rem;
+  
 }
 
+
 .header-left {
+  
   justify-content: flex-start;
 }
 
@@ -138,9 +139,10 @@ body {
   gap: 6px;
   background-color: blue;
   color: white;
-  padding: 10px 20px;
-  border-radius: 20px;
+  padding: 11px 20px;
+  border-radius: 13px 0;
   font-size: 0.85rem;
+  position: relative;
   font-weight: bold;
   text-decoration: none;
   white-space: nowrap;
@@ -249,17 +251,17 @@ body {
 
   .mobile-icons {
     display: flex;
-    right: 2px;
-    padding-left: 30px;
-   
-    background-color: black;
+    right: 30px;
+    
+    padding-left: 22px;
+    background-color: transparent;
     max-width: 100px;
     min-width: 100px;
     align-items: center;
   }
 
   .circle-btn {
-    background: #0f1131;
+    background: #2d2d63;
     border: none;
     border-radius: 50%;
     width: 32px;
@@ -268,17 +270,20 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 4px;
-    padding: 4px;
+  
+    padding: 3px;
     cursor: pointer;
-    padding-right: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
-
-  .circle-btn .dot {
-    width: 6px;
-    height: 6px;
-    background: white;
-    border-radius: 100%;
+ 
+  .mobile-icons svg {
+    background-color: transparent;
+    fill: white;
+    min-width: 20px;
+    border-radius: 50%;
+ 
+    
 
   }
 
@@ -296,7 +301,7 @@ body {
     width: 10px;
     min-width:10px;
     top: 8px;
-    right: 20px;
+    right: 19px;
     background-color: transparent;
     fill: #0000ff;
     transition: all .3s;
@@ -315,17 +320,25 @@ body {
     background-color:#0000ff;
     border-radius: 10px 0 5px; 
     margin: 0 0 0 10px;
-    padding: 11px 10px 11px 12px;
+    padding: 10px 12px 11px 12px;
     display: flex;
     align-items: center;
-    width: 50%;
+    width: 68%;
+  
+    margin-left: -2px;
     justify-content: center;
+   
   }
 
   .whatsapp-btn-2 img {
    width: 18px;
   height: 18px;
   }
+
+.mobile-icons, .whatsapp-btn-2 {
+  gap: 10px;
+}
+
 
   .mobile-menu {
     background: #18182c;
