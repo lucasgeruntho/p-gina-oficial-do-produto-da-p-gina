@@ -21,17 +21,37 @@
   });
 
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const menuBtn = document.getElementById("mobile-menu-btn");
-    const menu = document.getElementById("mobile-menu");
-    const submenu = document.querySelector(".submenu");
+document.addEventListener("DOMContentLoaded", function () {
+  const menuBtn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+  const submenu = document.querySelector(".submenu");
 
-    menuBtn.addEventListener("click", () => {
-      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-    });
+  menuBtn.addEventListener("click", (e) => {
+    e.stopPropagation(); 
+    const isActive = menuBtn.classList.toggle("active"); 
+    menu.style.display = isActive ? "flex" : "none";
 
-    submenu.addEventListener("click", () => {
-      submenu.classList.toggle("active");
-    });
+    // Ativa a submenu automaticamente quando o menu for aberto
+    if (isActive) {
+      submenu.classList.add("active");
+    } else {
+      submenu.classList.remove("active");
+    }
   });
+
+  // Se clicar em qualquer lugar fora do botão, remove o ativo
+  document.addEventListener("click", () => {
+    if (menuBtn.classList.contains("active")) {
+      menuBtn.classList.remove("active");
+      menu.style.display = "none";
+      submenu.classList.remove("active");
+    }
+  });
+
+  // Ainda permite o clique para alternar a submenu manualmente
+  submenu.addEventListener("click", () => {
+    submenu.classList.toggle("active");
+  });
+});
+
 
