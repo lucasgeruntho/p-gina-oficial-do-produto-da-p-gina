@@ -55,3 +55,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+const btn = document.querySelector('.circle-btn');
+
+btn.addEventListener('click', () => {
+  btn.classList.toggle('active');
+});
+
