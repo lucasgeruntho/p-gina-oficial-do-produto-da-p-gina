@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const isActive = menuBtn.classList.toggle("active"); 
     menu.style.display = isActive ? "flex" : "none";
 
-    // Ativa a submenu automaticamente quando o menu for aberto
+   
     if (isActive) {
       submenu.classList.add("active");
     } else {
@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Se clicar em qualquer lugar fora do botão, remove o ativo
   document.addEventListener("click", () => {
     if (menuBtn.classList.contains("active")) {
       menuBtn.classList.remove("active");
@@ -48,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Ainda permite o clique para alternar a submenu manualmente
+
   submenu.addEventListener("click", () => {
     submenu.classList.toggle("active");
   });
@@ -60,6 +59,9 @@ const btn = document.querySelector('.circle-btn');
 btn.addEventListener('click', () => {
   btn.classList.toggle('active');
 });
+
+
+
 
 
 
