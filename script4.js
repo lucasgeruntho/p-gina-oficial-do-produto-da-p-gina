@@ -1,47 +1,28 @@
-VANTA.DOTS({
-  el: ".opcoes",
-  mouseControls: true,
-  touchControls: true,
-  gyroControls: false,
-  minHeight: 680.00,
-  minWidth: 520.00,
-  scale: 1.00,
-  scaleMobile: 1.00,
-  color: 0xffffff,
-  color2: 0xf2f2f2,
-  backgroundColor: 0x0000ff,
-  size: 2.20,
-  spacing: 31.00
-})
-
-
-
 
 document.addEventListener('DOMContentLoaded', () => {
   const root  = document.querySelector('.loop-marquee');
   const track = root.querySelector('.loop-marquee__track');
   const baseGroup = root.querySelector('.loop-marquee__group');
 
-  let cycleWidth = 0, pos = 0, raf;
-  const speed = 0.6; // px/frame — aumente para ficar mais rápido
+  let cycleWidth = 0;
+  let pos = 0;
+  const speed = 0.6; // px por frame
+  let raf;
 
   const measure = el => el.getBoundingClientRect().width;
 
-  function build(){
-    // garante que só exista 1 grupo base dentro do track
+  function build() {
     track.innerHTML = '';
     const original = baseGroup.cloneNode(true);
     track.appendChild(original);
 
-    // mede UM ciclo completo (itens + gaps + spacer)
     cycleWidth = measure(original);
 
-    // duplica até cobrir container + um ciclo (evita “buracos”)
     const need = root.clientWidth + cycleWidth;
     let total = cycleWidth;
-    while (total < need){
+    while (total < need) {
       const clone = original.cloneNode(true);
-      clone.setAttribute('aria-hidden','true');
+      clone.setAttribute('aria-hidden', 'true');
       track.appendChild(clone);
       total += cycleWidth;
     }
@@ -50,14 +31,14 @@ document.addEventListener('DOMContentLoaded', () => {
     track.style.transform = 'translate3d(0,0,0)';
   }
 
-  function tick(){
+  function tick() {
     pos -= speed;
-    if (pos <= -cycleWidth) pos += cycleWidth; // reseta exatamente 1 ciclo
+    if (pos <= -cycleWidth) pos += cycleWidth;
     track.style.transform = `translate3d(${pos}px,0,0)`;
     raf = requestAnimationFrame(tick);
   }
 
-  function start(){
+  function start() {
     cancelAnimationFrame(raf);
     build();
     tick();
@@ -65,11 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   start();
 
-  // responsivo — recalcula quando a viewport mudar
-  let timer;
+  let t;
   addEventListener('resize', () => {
-    clearTimeout(timer);
-    timer = setTimeout(start, 120);
+    clearTimeout(t);
+    t = setTimeout(start, 120);
   });
 });
 

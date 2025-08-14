@@ -1,0 +1,115 @@
+.custom-header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  left: 40px;
+  padding: 0 6px 0 15px;
+  align-items: center;
+  height: 60px;
+  border-left: 8px solid #2400ff;
+  border-right: 8px solid #2400ff;
+  box-sizing: border-box;
+  border-radius: 0 0 20px 20px;
+  overflow: hidden; 
+  z-index: 10;
+  width: calc(100% - 80px);
+  background: #06050a;
+  
+}
+
+
+.header-side {
+  background-color: transparent;
+  display: flex;
+  padding-right: 10px;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+
+.header-left {
+  justify-content: flex-start;
+}
+
+.header-right {
+  justify-content: flex-end;
+}
+
+
+.logo {
+  height: 28px;
+  margin-right: 0.5rem;
+  width: 30px;
+}
+
+.brand-name {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.nav-center {
+  background-color: black;
+  display: flex;
+  white-space: nowrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.nav-center a {
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.nav-center a:hover {
+  color: #00aaff;
+}
+
+
+.social-popup {
+  position: absolute;
+  top: 70px; 
+  left: 0;
+  background: linear-gradient(135deg, #1010a5cc, #b300b3cc); 
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 12px;
+  width: 90px;
+  display: none;
+  flex-direction: column;
+  min-width: 200px;
+  z-index: 1;
+  opacity: 1;
+  pointer-events: all;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+}
+
+.social-popup a {
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: transparent;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.social-popup a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.social-popup img {
+  width: 20px;
+  background-color: transparent;
+  height: 20px;
+}
+
+
