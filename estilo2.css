@@ -1,54 +1,51 @@
-.loop-marquee {
-  --gap: 1rem;           /* Espaço entre os blocos */
-  --item-width: 1cm;     /* Cada bloco com largura fixa de 4 centímetros */
-  position: relative;
+/* container: começa grudado à esquerda */
+.marquee {
+  --gap: 40px;
+  --speed: 25s;      /* ajuste a velocidade */
   width: 100%;
-  background-color: #000;
   overflow: hidden;
-  isolation: isolate;
-  padding-block: 8px;
+  background: #0a0a2a;
+  padding: 10px 0;
 }
 
-.loop-marquee__track {
+/* trilho animado */
+.track {
   display: flex;
+  align-items: center;
+  gap: var(--gap);
+  /* inicia exatamente na borda esquerda */
+  transform: translateX(0);
   will-change: transform;
+  animation: scroll-left var(--speed) linear infinite;
 }
 
-.loop-marquee__group {
+/* item: svg + texto lado a lado */
+.item {
   display: inline-flex;
   align-items: center;
   gap: 10px;
   white-space: nowrap;
-}
-
-.loop-marquee__item {
-  flex: 0 0 var(--item-width); /* largura fixa de 4 cm */
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  white-space: nowrap;
+  flex: 0 0 auto;  /* impede quebrar/encolher */
+  color: #fff;
   font-weight: 600;
-  font-size: clamp(14px, 2vw, 18px);
-  color: white;
+  letter-spacing: .2px;
 }
 
-.loop-marquee__spacer {
-  flex: 0 0 var(--gap); /* Espaço entre o último e o próximo primeiro */
-  width: var(--gap);
-  height: 1px;
-  opacity: 0;
+.item img,
+.item svg {
+  height: 28px;
+  width: auto;
+  display: block;
 }
 
-.logo {
-  display: inline-grid;
-  place-items: center;
-  width: 1.2em;
-  height: 1.2em;
-  font-weight: 800;
-  color: #1b5cff;
-  margin-right: .6rem;
+/* bordas com fade suave (opcional) */
+.marquee {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 40px, #000 calc(100% - 40px), transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 40px, #000 calc(100% - 40px), transparent);
 }
 
-.loop-marquee, .loop-marquee * {
-  box-sizing: border-box;
+@keyframes scroll-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); } /* será ajustado via JS p/ loop perfeito */
 }
+

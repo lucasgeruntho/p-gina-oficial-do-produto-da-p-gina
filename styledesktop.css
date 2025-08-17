@@ -1,5 +1,80 @@
+
+
+/* ocultar desktop */
+
+.primary-text-01,
+.insta-container, .img-test-01,
+.opcoes, .landing-info, .pills-reveal, #pills-anchor, .portfolio-container, .mobile-top-container, .ocultar-desktop,
+.background-topo, .btns-primary, .strategy-box, .porque-me-contratar, .submenu, .mobile-menu, #mobile-menu, .social-popup #social-popup{
+  display: none;
+}
+
+@media (max-width:768px ){
+  
+  .pills-reveal{
+    
+    left: 0; right: 0;
+    bottom: 24px;
+    margin-top: -35px;
+    display: flex; 
+    justify-content: center;
+    pointer-events: none;       
+    transform: translateY(16px) scale(.98);
+    opacity: 0;
+    z-index: 1;
+    transition: transform .35s ease, opacity .35s ease, filter .35s ease;
+    filter: saturate(.9);
+  }
+  
+  .pills-reveal.is-visible{
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    filter: saturate(1);
+    animation: pop 420ms ease-out 1;  
+  }
+  
+  
+
+ 
+  .pills-wrap{
+    width: min(720px, 100% - clamp(16px, 6vw, 48px)*2);
+    pointer-events: auto; 
+  }
+
+  .pills-list{
+    list-style: none; margin: 0; padding: 0;
+    display: grid; gap: 12px;
+  }
+  .pills-list li{
+    padding: 12px 20px;
+    border-radius: 999px;
+    font: 600 15px/1.2 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans";
+    letter-spacing: .2px; text-align: center; color: #dfe3ff;
+    background: radial-gradient(120% 140% at 50% 0%, #2d345a 0%, #1b2038 60%, #13172b 100%);
+    border: 1px solid rgba(153,173,255,.22);
+    box-shadow: 0 2px 8px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.06);
+    backdrop-filter: blur(6px);
+  }
+  .pills-list li:hover{ filter: brightness(1.05); }
+
+  @keyframes pop{
+    0%{ transform: translateY(24px) scale(.96); opacity: 0; }
+    60%{ transform: translateY(-2px) scale(1.02); opacity: 1; }
+    100%{ transform: translateY(0) scale(1); }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .pills-reveal{ transition: none; animation: none; }
+  }
+
+ 
+  #pills-anchor{ height: 1px; }
+
+}
+
+
 .custom-header {
-  position: relative;
+  position: fixed;
   display: flex;
   justify-content: space-between;
   left: 40px;
@@ -14,7 +89,6 @@
   z-index: 10;
   width: calc(100% - 80px);
   background: #06050a;
-  
 }
 
 
@@ -24,7 +98,6 @@
   padding-right: 10px;
   align-items: center;
   justify-content: space-between;
-  
 }
 
 
@@ -69,7 +142,6 @@
   color: #00aaff;
 }
 
-
 .social-popup {
   position: absolute;
   top: 70px; 
@@ -111,5 +183,7 @@
   background-color: transparent;
   height: 20px;
 }
+
+
 
 
